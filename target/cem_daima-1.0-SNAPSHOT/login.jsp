@@ -46,7 +46,7 @@
 		//登录 函数 自定义的 function方法 一定要写在 $(function () 的外面
 		login=function () {
 
-			$("#msg").html("")
+			//$("#msg").html("")
 
 			//alert("登录验证")
 			//使用 $.trim的方式 进行去除前后空格
@@ -66,7 +66,7 @@
 					"loginAct":$loginAct,
 					"loginPwd":$loginPwd
 				},
-				type : "post",
+				type : "POST",
 				dataType : "json",
 				success : function (data) {
 

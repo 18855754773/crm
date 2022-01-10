@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import java.sql.SQLOutput;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
@@ -63,4 +64,14 @@ public class UserServiceImpl implements UserService {
 
         return user;
     }
+
+    @Override
+    public List<User> getUserList() {
+
+        List<User> ulist = userDao.getUserList();
+
+        return ulist;
+    }
+
+
 }

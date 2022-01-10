@@ -17,38 +17,42 @@
  </filter-mapping>
 
  <filter>
-     <filter-name>loginFilter</filter-name>
+     <filter-name>LoginFilter</filter-name>
      <filter-class>com.bjpowernode.crm.web.filter.LoginFilter</filter-class>
  </filter>
 
   <filter-mapping>
-      <filter-name>loginFilter</filter-name>
+      <filter-name>LoginFilter</filter-name>
       <url-pattern>*.do</url-pattern>
-      <url-pattern>*.jsp</url-pattern>
+     <url-pattern>*.jsp</url-pattern>
   </filter-mapping>
+
 
     <!--用户控制器-->
   <servlet>
     <servlet-name>UserController</servlet-name>
     <servlet-class>com.bjpowernode.crm.settings.web.controller.UserController</servlet-class>
   </servlet>
-    <servlet>
-        <servlet-name>ActivityController</servlet-name>
-        <servlet-class>com.bjpowernode.crm.workbench.web.controller.ActivityController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ActivityController</servlet-name>
-        <url-pattern>/workbench/activity/xxx.do</url-pattern>
-    </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>UserController</servlet-name>
     <url-pattern>/settings/user/login.do</url-pattern>
   </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ActivityController</servlet-name>
+        <servlet-class>com.bjpowernode.crm.workbench.web.controller.ActivityController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ActivityController</servlet-name>
+        <url-pattern>/workbench/activity/getUserList.do</url-pattern>
+        <url-pattern>/workbench/activity/save.do</url-pattern>
+        <url-pattern>/workbench/activity/pageList.do</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
-
-
-
 
 
 
