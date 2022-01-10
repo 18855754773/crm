@@ -22,6 +22,7 @@ String basePath = request.getScheme() + "://"+request.getServerName() + ":" + re
 		
 		$("#addBtn").click(function () {
 
+			alert("aaa")
 			$("#createActivityModal").modal("show");
 
 		})
