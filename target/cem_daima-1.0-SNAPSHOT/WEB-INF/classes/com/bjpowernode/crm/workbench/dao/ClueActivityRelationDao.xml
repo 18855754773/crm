@@ -5,6 +5,18 @@
 
 <mapper namespace="com.bjpowernode.crm.workbench.dao.ClueActivityRelationDao">
 
+    <delete id="delete">
+
+        delete from tbl_clue_activity_relation where id=#{id}
+
+    </delete>
+
+    <select id="getListByClueId" resultType="com.bjpowernode.crm.workbench.domain.ClueActivityRelation">
+
+        select * from tbl_clue_activity_relation where clueId=#{clueId}
+
+    </select>
+
     <insert id="bund">
 
         insert into tbl_clue_activity_relation(

@@ -5,6 +5,18 @@
 
 <mapper namespace="com.bjpowernode.crm.workbench.dao.ClueDao">
 
+    <delete id="delete">
+
+        delete from tbl_clue where id=#{id}
+
+    </delete>
+
+    <select id="getById" resultType="com.bjpowernode.crm.workbench.domain.Clue">
+
+        select * from tbl_clue where id=#{clueId}
+
+    </select>
+
     <select id="detail" resultType="com.bjpowernode.crm.workbench.domain.Clue">
 
         select

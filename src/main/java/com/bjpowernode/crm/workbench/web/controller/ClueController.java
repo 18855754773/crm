@@ -79,6 +79,7 @@ public class ClueController extends HttpServlet {
 
         String clueId = request.getParameter("clueId");
         //System.out.println("clueId是否含有-------------------" + clueId);
+        String createBy = ((User)request.getSession().getAttribute("user")).getName();
 
         //接受是否需要创建交易的标记
         String flag = request.getParameter("flag");
@@ -97,7 +98,7 @@ public class ClueController extends HttpServlet {
             String activityId = request.getParameter("activityId");
             String id = UUIDUtil.getUUID();
             String createTime = DateTimeUtil.getSysTime();
-            String createBy = ((User)request.getSession().getAttribute("user")).getName();
+
 
             t.setMoney(money);
             t.setName(name);
@@ -112,13 +113,13 @@ public class ClueController extends HttpServlet {
 
         ClueService cs = (ClueService) ServiceFactory.getService(new ClueServiceImpl());
 
-/*       boolean flag1 = cs.convert();
+        boolean flag1 = cs.convert(clueId,t,createBy);
 
         if (flag1){
 
             response.sendRedirect(request.getContextPath()+"/workbench/clue/index.jsp");
 
-        }*/
+        }
 
     }
     private void getActivityListByName(HttpServletRequest request, HttpServletResponse response) {
